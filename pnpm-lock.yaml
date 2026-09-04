@@ -5,6 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@glimmer/syntax@0.95.0': 953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab
   mitata@1.0.34: c117a0cd0791eb0ae7176ee205837e9b81d8bd3d55c6193c4d95e12ddb1572df
 
 importers:
@@ -7821,7 +7822,7 @@ snapshots:
       '@simple-dom/interface': 1.4.0
       type-fest: 4.41.0
 
-  '@glimmer/syntax@0.95.0':
+  '@glimmer/syntax@0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)':
     dependencies:
       '@glimmer/interfaces': 0.94.6
       '@glimmer/util': 0.94.8
@@ -7839,7 +7840,7 @@ snapshots:
 
   '@glint/ember-tsc@1.10.1(ember-source@6.12.0(@glimmer/component@2.1.1(supports-color@10.2.2))(rsvp@4.8.5)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -7863,7 +7864,7 @@ snapshots:
 
   '@glint/ember-tsc@1.10.1(ember-source@7.1.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -7887,7 +7888,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@5.9.3)
       '@volar/language-core': 2.4.28
@@ -7912,7 +7913,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@6.0.3)
       '@volar/language-core': 2.4.28
@@ -7937,7 +7938,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -9152,18 +9153,18 @@ snapshots:
 
   babel-plugin-ember-template-compilation@2.4.1:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       babel-import-util: 3.0.1
 
   babel-plugin-ember-template-compilation@3.1.0:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       babel-import-util: 3.0.1
       import-meta-resolve: 4.2.0
 
   babel-plugin-ember-template-compilation@4.0.0:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       babel-import-util: 3.0.1
       import-meta-resolve: 4.2.0
 
@@ -10188,7 +10189,7 @@ snapshots:
   ember-estree@0.8.0:
     dependencies:
       '@glimmer/env': 0.1.7
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.95.0(patch_hash=953b07c0ceb2d810380d9c2b97afcae368be78cd52be0d7e0649c9ae361bd7ab)
       content-tag: 4.2.0
       oxc-parser: 0.130.0
 
