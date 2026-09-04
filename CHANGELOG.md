@@ -1,5 +1,29 @@
 # Changelog
 
+## Release (2026-09-04)
+
+* ember-content-mapper 0.3.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-content-mapper`
+  * [#36](https://github.com/NullVoxPopuli/ember-content-mapper/pull/36) Record that `Args: Record<string, never>` also fails on a direct invocation ([@johanrd](https://github.com/johanrd))
+  * [#31](https://github.com/NullVoxPopuli/ember-content-mapper/pull/31) Record the empty-body close tag as a diagnostic Glint drops ([@johanrd](https://github.com/johanrd))
+
+#### :memo: Documentation
+* `ember-content-mapper`
+  * [#40](https://github.com/NullVoxPopuli/ember-content-mapper/pull/40) docs: split migration guides out of the README ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#38](https://github.com/NullVoxPopuli/ember-content-mapper/pull/38) docs: VS Code setup with marketplace extensions and js/ts.* settings ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#30](https://github.com/NullVoxPopuli/ember-content-mapper/pull/30) Refine readme to optionally keep the tsconfig types entries while ember-tsc coexists ([@johanrd](https://github.com/johanrd))
+
+#### :house: Internal
+* `ember-content-mapper`
+  * [#37](https://github.com/NullVoxPopuli/ember-content-mapper/pull/37) Prepare Release v0.3.1 ([@github-actions[bot]](https://github.com/apps/github-actions))
+
+#### Committers: 3
+- GitHub Actions [Bot] ([@github-actions](https://github.com/apps/github-actions))
+- Johan Røed ([@johanrd](https://github.com/johanrd))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2026-08-30)
 
 * ember-content-mapper 0.3.1 (patch)
