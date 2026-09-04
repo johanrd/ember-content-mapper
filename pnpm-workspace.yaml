@@ -16,4 +16,5 @@ packages:
   - examples/*
   - test/test-packages/*
 patchedDependencies:
+  '@glimmer/syntax@0.95.0': patches/@glimmer__syntax@0.95.0.patch
   mitata@1.0.34: patches/mitata@1.0.34.patch

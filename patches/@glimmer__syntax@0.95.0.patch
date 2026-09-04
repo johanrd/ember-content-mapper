@@ -1,0 +1,133 @@
+diff --git a/dist/dev/patched.cjs b/dist/dev/patched.cjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..5cbcb79a38833821f99de951b4fcd13565184fa6
+--- /dev/null
++++ b/dist/dev/patched.cjs
+@@ -0,0 +1,31 @@
++// Patched (emberjs/ember.js acd8261c6b, unreleased in @glimmer/syntax 0.95.0):
++// cache line starts so position conversion is O(log n) instead of a rescan per call.
++function patchSource(Source) {
++  Source.prototype.lineStarts = function () {
++    if (!this._lineStarts) {
++      const starts = [0];
++      for (let i = this.source.indexOf("\n"); i !== -1; i = this.source.indexOf("\n", i + 1)) starts.push(i + 1);
++      this._lineStarts = starts;
++    }
++    return this._lineStarts;
++  };
++  Source.prototype.hbsPosFor = function (offset) {
++    if (offset > this.source.length) return null;
++    const starts = this.lineStarts();
++    let lo = 0, hi = starts.length - 1;
++    while (lo < hi) {
++      const mid = (lo + hi + 1) >> 1;
++      if (starts[mid] <= offset) lo = mid; else hi = mid - 1;
++    }
++    return { line: lo + 1, column: offset - starts[lo] };
++  };
++  Source.prototype.charPosFor = function (position) {
++    const starts = this.lineStarts(), sourceLength = this.source.length, line = position.line, column = position.column;
++    if (line - 1 >= starts.length) return sourceLength;
++    const lineStart = starts[line - 1], lineEnd = line < starts.length ? starts[line] - 1 : sourceLength;
++    return lineStart + column > lineEnd ? lineEnd : lineStart + column;
++  };
++}
++const original = require('./index.cjs');
++patchSource(original.src.Source);
++module.exports = original;
+diff --git a/dist/dev/patched.js b/dist/dev/patched.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..9fe2b63db3a7904cbb6835ee001fe7bd26730b9a
+--- /dev/null
++++ b/dist/dev/patched.js
+@@ -0,0 +1,31 @@
++// Patched (emberjs/ember.js acd8261c6b, unreleased in @glimmer/syntax 0.95.0):
++// cache line starts so position conversion is O(log n) instead of a rescan per call.
++function patchSource(Source) {
++  Source.prototype.lineStarts = function () {
++    if (!this._lineStarts) {
++      const starts = [0];
++      for (let i = this.source.indexOf("\n"); i !== -1; i = this.source.indexOf("\n", i + 1)) starts.push(i + 1);
++      this._lineStarts = starts;
++    }
++    return this._lineStarts;
++  };
++  Source.prototype.hbsPosFor = function (offset) {
++    if (offset > this.source.length) return null;
++    const starts = this.lineStarts();
++    let lo = 0, hi = starts.length - 1;
++    while (lo < hi) {
++      const mid = (lo + hi + 1) >> 1;
++      if (starts[mid] <= offset) lo = mid; else hi = mid - 1;
++    }
++    return { line: lo + 1, column: offset - starts[lo] };
++  };
++  Source.prototype.charPosFor = function (position) {
++    const starts = this.lineStarts(), sourceLength = this.source.length, line = position.line, column = position.column;
++    if (line - 1 >= starts.length) return sourceLength;
++    const lineStart = starts[line - 1], lineEnd = line < starts.length ? starts[line] - 1 : sourceLength;
++    return lineStart + column > lineEnd ? lineEnd : lineStart + column;
++  };
++}
++import { src } from './index.js';
++export * from './index.js';
++patchSource(src.Source);
+diff --git a/dist/prod/patched.js b/dist/prod/patched.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..9fe2b63db3a7904cbb6835ee001fe7bd26730b9a
+--- /dev/null
++++ b/dist/prod/patched.js
+@@ -0,0 +1,31 @@
++// Patched (emberjs/ember.js acd8261c6b, unreleased in @glimmer/syntax 0.95.0):
++// cache line starts so position conversion is O(log n) instead of a rescan per call.
++function patchSource(Source) {
++  Source.prototype.lineStarts = function () {
++    if (!this._lineStarts) {
++      const starts = [0];
++      for (let i = this.source.indexOf("\n"); i !== -1; i = this.source.indexOf("\n", i + 1)) starts.push(i + 1);
++      this._lineStarts = starts;
++    }
++    return this._lineStarts;
++  };
++  Source.prototype.hbsPosFor = function (offset) {
++    if (offset > this.source.length) return null;
++    const starts = this.lineStarts();
++    let lo = 0, hi = starts.length - 1;
++    while (lo < hi) {
++      const mid = (lo + hi + 1) >> 1;
++      if (starts[mid] <= offset) lo = mid; else hi = mid - 1;
++    }
++    return { line: lo + 1, column: offset - starts[lo] };
++  };
++  Source.prototype.charPosFor = function (position) {
++    const starts = this.lineStarts(), sourceLength = this.source.length, line = position.line, column = position.column;
++    if (line - 1 >= starts.length) return sourceLength;
++    const lineStart = starts[line - 1], lineEnd = line < starts.length ? starts[line] - 1 : sourceLength;
++    return lineStart + column > lineEnd ? lineEnd : lineStart + column;
++  };
++}
++import { src } from './index.js';
++export * from './index.js';
++patchSource(src.Source);
+diff --git a/package.json b/package.json
+index 6239f71733bb597b37c0f9222e303be5e5659e8d..72397db5fcb5e503256150b74d51b9bb67aa646b 100644
+--- a/package.json
++++ b/package.json
+@@ -12,14 +12,14 @@
+     ".": {
+       "development": {
+         "types": "./dist/dev/index.d.ts",
+-        "default": "./dist/dev/index.js"
++        "default": "./dist/dev/patched.js"
+       },
+       "require": {
+-        "default": "./dist/dev/index.cjs"
++        "default": "./dist/dev/patched.cjs"
+       },
+       "default": {
+         "types": "./dist/prod/index.d.ts",
+-        "default": "./dist/prod/index.js"
++        "default": "./dist/prod/patched.js"
+       }
+     }
+   },
