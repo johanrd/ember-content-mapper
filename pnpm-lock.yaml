@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@glimmer/syntax': 0.97.0
+
 patchedDependencies:
   mitata@1.0.34: c117a0cd0791eb0ae7176ee205837e9b81d8bd3d55c6193c4d95e12ddb1572df
 
@@ -1402,17 +1405,8 @@ packages:
   '@glimmer/env@0.1.7':
     resolution: {integrity: sha512-JKF/a9I9jw6fGoz8kA7LEQslrwJ5jms5CXhu/aqkBWk+PmZ6pTl8mlb/eJ/5ujBGTiQzBhy5AIWF712iA+4/mw==}
 
-  '@glimmer/interfaces@0.94.6':
-    resolution: {integrity: sha512-sp/1WePvB/8O+jrcUHwjboNPTKrdGicuHKA9T/lh0vkYK2qM5Xz4i25lQMQ38tEMiw7KixrjHiTUiaXRld+IwA==}
-
-  '@glimmer/syntax@0.95.0':
-    resolution: {integrity: sha512-W/PHdODnpONsXjbbdY9nedgIHpglMfOzncf/moLVrKIcCfeQhw2vG07Rs/YW8KeJCgJRCLkQsi+Ix7XvrurGAg==}
-
-  '@glimmer/util@0.94.8':
-    resolution: {integrity: sha512-HfCKeZ74clF9BsPDBOqK/yRNa/ke6niXFPM6zRn9OVYw+ZAidLs7V8He/xljUHlLRL322kaZZY8XxRW7ALEwyg==}
-
-  '@glimmer/wire-format@0.94.8':
-    resolution: {integrity: sha512-A+Cp5m6vZMAEu0Kg/YwU2dJZXyYxVJs2zI57d3CP6NctmX7FsT8WjViiRUmt5abVmMmRH5b8BUovqY6GSMAdrw==}
+  '@glimmer/syntax@0.97.0':
+    resolution: {integrity: sha512-uDUqlAxU40eJHJjMUR6ffdpDp6W53gNvS9YZNrBbf77sUL5xUFsBAaReB3FuyVPbwRg09p5rviioUJ8nyg7BBA==}
 
   '@glint/ember-tsc@1.10.1':
     resolution: {integrity: sha512-faV2phmhK4qETXYv1gmIBTn4ppunFrrzfb2TwRnaYW3GRj+O6SbB9NEq+TaENw1vaid+Y7/nccCDpEV8WfS/Sw==}
@@ -1441,10 +1435,6 @@ packages:
     resolution: {integrity: sha512-vDbnOURZ/czyqaI0QzMF155IMFYda2G21ftsHuestRyinZjeZvuz/bjqBP7kx0TOg/hisp/t4eF2yza2UF4GMA==}
     peerDependencies:
       '@glint/template': '*'
-
-  '@handlebars/parser@2.2.2':
-    resolution: {integrity: sha512-n/SZW+12rwikx/f8YcSv9JCi5p9vn1Bnts9ZtVvfErG4h0gbjHI1H1ZMhVUnaOC7yzFc6PtsCKIK8XeTnL90Gw==}
-    engines: {node: ^18 || ^20 || ^22 || >=24}
 
   '@inquirer/ansi@2.0.7':
     resolution: {integrity: sha512-3eTuUO1vH2cZm2ZKHeQxnOqlTi9EfZDGgIe3BL3I4u+rJHocr9Fz86M4fjYABPvFnQG/gGK551HqDiIcETwU6Q==}
@@ -3085,6 +3075,7 @@ packages:
 
   charm@1.0.2:
     resolution: {integrity: sha512-wqW3VdPnlSWT4eRiYX+hcs+C6ViBPUWk1qTCd+37qw9kEm/a5n2qcyQDMBWvSYKN/ctqZzeXNQaeBjOetJJUkw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   chokidar@5.0.0:
     resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
@@ -5867,6 +5858,10 @@ packages:
   simple-html-tokenizer@0.5.11:
     resolution: {integrity: sha512-C2WEK/Z3HoSFbYq8tI7ni3eOo/NneSPRoPpcM7WdLjFOArFuyXEjAoCdOC3DgMfRyziZQ1hCNR4mrNdWEvD0og==}
 
+  simple-html-tokenizer@1.0.0:
+    resolution: {integrity: sha512-ydo9dHOcttfRxVWBglPk7jcBucsuva2zN+5SmUO5eXgUBlxFCZ9CwYEpF30ESzfKsckimVQE+GIbfsgM3mgSdQ==}
+    engines: {node: '>= 20.19'}
+
   smart-buffer@4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
@@ -6231,10 +6226,6 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
-
-  type-fest@4.41.0:
-    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
-    engines: {node: '>=16'}
 
   type-fest@5.8.0:
     resolution: {integrity: sha512-YGYEVz3Fm5iy/AybuA0oyNFq7H4CgQNfRp/qfe8nurE1kuCeNm3/vfm9X4Mtl+qLyaKJUh5xrFZwogr41SMjYA==}
@@ -7816,30 +7807,13 @@ snapshots:
 
   '@glimmer/env@0.1.7': {}
 
-  '@glimmer/interfaces@0.94.6':
+  '@glimmer/syntax@0.97.0':
     dependencies:
-      '@simple-dom/interface': 1.4.0
-      type-fest: 4.41.0
-
-  '@glimmer/syntax@0.95.0':
-    dependencies:
-      '@glimmer/interfaces': 0.94.6
-      '@glimmer/util': 0.94.8
-      '@glimmer/wire-format': 0.94.8
-      '@handlebars/parser': 2.2.2
-      simple-html-tokenizer: 0.5.11
-
-  '@glimmer/util@0.94.8':
-    dependencies:
-      '@glimmer/interfaces': 0.94.6
-
-  '@glimmer/wire-format@0.94.8':
-    dependencies:
-      '@glimmer/interfaces': 0.94.6
+      simple-html-tokenizer: 1.0.0
 
   '@glint/ember-tsc@1.10.1(ember-source@6.12.0(@glimmer/component@2.1.1(supports-color@10.2.2))(rsvp@4.8.5)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -7863,7 +7837,7 @@ snapshots:
 
   '@glint/ember-tsc@1.10.1(ember-source@7.1.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -7887,7 +7861,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@5.9.3)
       '@volar/language-core': 2.4.28
@@ -7912,7 +7886,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@6.0.3)
       '@volar/language-core': 2.4.28
@@ -7937,7 +7911,7 @@ snapshots:
 
   '@glint/ember-tsc@1.11.0(ember-source@7.2.0(@glimmer/component@2.1.1(supports-color@10.2.2))(supports-color@10.2.2))(supports-color@10.2.2)(typescript@7.1.0-dev.20260821.1)':
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       '@glint/template': 1.8.0
       '@volar/kit': 2.4.28(typescript@7.1.0-dev.20260821.1)
       '@volar/language-core': 2.4.28
@@ -7966,8 +7940,6 @@ snapshots:
     dependencies:
       '@glint/template': 1.8.0
       expect-type: 1.4.0
-
-  '@handlebars/parser@2.2.2': {}
 
   '@inquirer/ansi@2.0.7': {}
 
@@ -9152,18 +9124,18 @@ snapshots:
 
   babel-plugin-ember-template-compilation@2.4.1:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       babel-import-util: 3.0.1
 
   babel-plugin-ember-template-compilation@3.1.0:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       babel-import-util: 3.0.1
       import-meta-resolve: 4.2.0
 
   babel-plugin-ember-template-compilation@4.0.0:
     dependencies:
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       babel-import-util: 3.0.1
       import-meta-resolve: 4.2.0
 
@@ -10188,7 +10160,7 @@ snapshots:
   ember-estree@0.8.0:
     dependencies:
       '@glimmer/env': 0.1.7
-      '@glimmer/syntax': 0.95.0
+      '@glimmer/syntax': 0.97.0
       content-tag: 4.2.0
       oxc-parser: 0.130.0
 
@@ -12618,6 +12590,8 @@ snapshots:
 
   simple-html-tokenizer@0.5.11: {}
 
+  simple-html-tokenizer@1.0.0: {}
+
   smart-buffer@4.2.0: {}
 
   snapshot-fixtures@1.3.3(prettier@3.9.6):
@@ -13170,8 +13144,6 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.8.1: {}
-
-  type-fest@4.41.0: {}
 
   type-fest@5.8.0:
     dependencies:

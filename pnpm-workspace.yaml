@@ -11,9 +11,12 @@ minimumReleaseAgeExclude:
   - typescript@7.1.0-dev.20260821.1
   - '@glint/ember-tsc@1.11.0'
   - ember-estree@0.8.0
+  - '@glimmer/syntax@0.97.0'
 packages:
   - '.'
   - examples/*
   - test/test-packages/*
 patchedDependencies:
   mitata@1.0.34: patches/mitata@1.0.34.patch
+overrides:
+  "@glimmer/syntax": 0.97.0
